@@ -40,9 +40,9 @@ public class MovieController {
     public String getTenSortByPopularity() throws FileNotFoundException {
         MovieService tenMoviesSortedByPop = new MovieService();
 
-        String arrayListTenSortedMovies = tenMoviesSortedByPop.tenMoviesSortedByPopularity();
+        String tenSortedMoviesList = tenMoviesSortedByPop.tenMoviesSortedByPopularity();
 
-        return arrayListTenSortedMovies;
+        return tenSortedMoviesList;
     }
 
     @GetMapping("/howManyWonAnAward") //3.5
@@ -51,5 +51,11 @@ public class MovieController {
         int amountOfMovies = howManyMoviesWonAnAward.wonAnAward();
 
         return amountOfMovies;
+    }
+
+    @GetMapping("/longest?g1=''g2=''") //3.7
+    public String longestMovieTwoGenres(){
+
+        return null;
     }
 }

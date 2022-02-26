@@ -35,7 +35,7 @@ public class MovieService{
         int howManyMoviesWon = 0;
 
         for (int i = 0; i < movieLibrary.size(); i++) {
-            if(movieLibrary.get(i).isWonAwards()){
+            if(movieLibrary.get(i).isWonAwards()){ // == true
                 howManyMoviesWon++;
             }
         }
@@ -65,4 +65,30 @@ public class MovieService{
 
         return tenMoviesString;
     }
+
+    public String longestMovie2Genres() throws FileNotFoundException {
+        ArrayList<Movie> movieLibrary = movieRepository.allMovies();
+        int genreCount1 = 0;
+        int genreLenght1 = 0;
+        int genreCount2 = 0;
+        int genreLength2 = 0;
+
+        for(int i = 0; i < movieLibrary.size(); i++) {
+            if(movieLibrary.get(i).getSubject() == genre1){
+                genreLenght1 += movieLibrary.get(i).getLength();
+                genreCount1++;
+
+            }else if(movieLibrary.get(i).getSubject() == genre2){
+                genreLength2 += movieLibrary.get(i).getLength();
+                genreCount2++;
+            }
+
+        double averageLengthGenre1 = (double) genreLenght1/genreCount1;
+        double averageLengthGenre2 = (double) genreLength2/genreCount2;
+
+        }
+
+        return null;
+    }
+
 }
